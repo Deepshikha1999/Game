@@ -40,9 +40,9 @@ Thumbs.db
 *.tga
 *.psd
 
-# Git LFS (optional)
-*.png
-*.jpg
-*.fbx
-*.mp4
-*.wav
+# # Git LFS (optional)
+# *.png
+# *.jpg
+# *.fbx
+# *.mp4
+# *.wav
