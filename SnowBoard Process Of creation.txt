@@ -1,0 +1,91 @@
+Latest On Going Project: SNOW BOARDING
+
+Class 1:
+
+    Game Mechanics We need:
+
+        Move along the track
+        Rotate forwards and backwards
+        Ability to speed up
+        Particle effects that only play when we’er touching ground
+        Finish line that restarts level
+        Crash detection which restarts the level
+    —————————————————————-
+    Game Design:
+
+        Smooth, relaxing
+    —————————————————————-
+    Core Mechanics :
+
+        Don’t crash
+    —————————————————————-
+    Game Loop:
+
+        Reach the end to win
+    —————————————————————-
+    Characters name:
+
+        Zara
+    ______________________
+    Topics covered:
+        a. Sprite shape: closed shape
+            i. Create a new sprite profiler inside Assets/Sprites to avoid affecting the in built sprite profiler : snow profiler
+
+            ii. We will create a 2D closed shape sprite shape and inside the Sprite Shape Controller script, we will add our own created snow profiler than the built in one : Level Sprite Shape
+
+            iii. Inside snow profiler we will add snow tile low res from our added sprite into Sprites. (Added similar color in textures to match the whole profiler color)
+
+            iv. We can got to edit spline, it will help us to do the magic to change the shape whatever way we want, which is very useful to built the platform.
+        b. Use of EdgeColliders:
+            i. Click on Level Sprite Shape
+
+            ii. Add Component -> Edge Collider [To wrap the shape of each and every edge and curve to be as collider]
+
+            iii. If we want to increase the height of snow : Edge Spline -> Select all points/splines -> adjust the height
+
+        c. Cinemachine:
+            It is a powerful package that lets us:
+                1. manage multiple cameras in our scene
+                2. easily create rules for our camera
+            What we have done is we have added a "Cinemachine Brain" in our Main Camera where in Cinemachine brain we can point different cameras for different purposes, like following objects, zooming, and focusing like that.
+
+            How to add a package:
+                i. Windows on the top menu bar
+                ii. Package Manager
+                iii. Unity Registry
+                iv. Search Cinemachine
+                v. Install Cinemachine
+            
+            How to add Virtual Camera to follow the snow boarder:
+                i. Right click in Sample Scenes
+                ii. Add Virtual Camera (Old way) and enable follow and add       snowBoarder as Main focus. Add Framing Transposer as body
+                    or 
+                    Add a Follow Camera and add snow boarder as main focus
+
+                iii. Add CinemachineBrain in main camera if not added by default
+
+        d. Snow Boarder as Character : In my case she is Zara
+                i. Create an empty component
+                ii. Add the rigid body feature in it
+                iii. Add parts of body under empty component from sprites added
+                iv. Add capsule collider component on skate board to make skate board move on snow
+        
+        e. Surface Effector 2D:
+                The surface effector 2D applies tangent forces along the surfaces of colliders used by the effector in an attempt to match a specified speed along the surface. Like a Conveyor Belt.
+
+            How to apply it?
+                i. Go to level sprite shape
+                ii. Add Component Surface Effector 2D
+                iii. Set the flag true in Edge Collider Component for "Use By Effector"
+            
+            Note: in snow boarder collision for snow board make Collision detection as Continuous
+            
+
+
+
+
+            
+
+
+
+
